@@ -13,21 +13,90 @@
     />
     <!-- link to css -->
     <link rel="stylesheet" href="./styles.css" />
+    <!-- leaflet css -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- leaflet js -->
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- link to js -->
-    <script src="./script.js" defer></script>
+    <script defer src="./script.js" type="module"></script>
     <title>Frontend Mentor | IP Address Tracker</title>
   </head>
   <body>
-    <!-- IP Address Tracker
+    <!-- Header -->
+    <div class="header">
+      <h2>IP Address Tracker</h2>
+      <form class="input">
+        <input
+          type="text"
+          placeholder=" Search for any IP address or domain"
+          id="input-ip"
+        />
+        <button type="submit" class="submitbtn">
+          <img src="./images/icon-arrow.svg" alt="" />
+        </button>
+      </form>
+      <div class="details">
+        <div class="address">
+          <div class="vl hidden"></div>
+          <div class="info">
+            <p>IP ADDRESS</p>
+            <h3 class="iptext"></h3>
+          </div>
+        </div>
 
-  Search for any IP address or domain
+        <div class="location">
+          <div class="vl"></div>
+          <div class="info">
+            <p>LOCATION</p>
+            <h3 class="loctext"></h3>
+          </div>
+        </div>
 
-  IP Address
-  Location
-  Timezone
-    UTC add offset value dynamically using the API -->
-    <!-- ISP -->
+        <div class="timezone">
+          <div class="vl"></div>
+          <div class="info">
+            <p>TIMEZONE</p>
+            <h3 class="timetext"></h3>
+          </div>
+        </div>
 
+        <div class="isp">
+          <div class="vl"></div>
+          <div class="info">
+            <p>ISP</p>
+            <h3 class="isptext"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Map -->
+    <div id="mapid"></div>
+    <!-- Error message modal -->
+    <div class="modal hidden">
+      <button class="modal__btn--close"><i class="fas fa-times"></i></button>
+      <p class="error-message"></p>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <!-- Attributions -->
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
