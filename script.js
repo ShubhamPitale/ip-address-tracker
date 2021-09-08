@@ -77,7 +77,7 @@ const updateInfo = function (data) {
   document.querySelector(".loctext").textContent = data.location.city;
   document.querySelector(
     ".timetext"
-  ).textContent = `GMT+ ${data.location.timezone}`;
+  ).textContent = `GMT ${data.location.timezone}`;
   document.querySelector(".isptext").textContent = data.isp;
 };
 //Close modal
