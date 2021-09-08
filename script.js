@@ -75,7 +75,9 @@ const loadData = async function () {
 const updateInfo = function (data) {
   document.querySelector(".iptext").textContent = data.ip;
   document.querySelector(".loctext").textContent = data.location.city;
-  document.querySelector(".timetext").textContent = data.location.timezone;
+  document.querySelector(
+    ".timetext"
+  ).textContent = `GMT+ ${data.location.timezone}`;
   document.querySelector(".isptext").textContent = data.isp;
 };
 //Close modal
